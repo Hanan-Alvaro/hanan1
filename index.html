@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pengecekan Kesehatan Anak Gen Z</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lemonada&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lemonada', cursive;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      /* Background with Ghibli style exercise image - Replace with your preferred Ghibli-style exercise image */
+      background: linear-gradient(rgba(38,38,38,0.6), rgba(38,38,38,0.6)),
+                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3rem;
+      margin-bottom: 5px;
+      font-weight: 700;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.9);
+      color: #fff4e5;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    main {
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 2;
+      font-family: 'Lemonada', cursive;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2575fc;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    .question {
+      margin-bottom: 25px;
+    }
+
+    .question h3 {
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #6a11cb;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    label {
+      display: block;
+      background: #f1f1f1;
+      color: #333;
+      margin-bottom: 8px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+      font-family: 'Lemonada', cursive;
+    }
+
+    label:hover {
+      background: #dde9ff;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked + label {
+      background: #2575fc;
+      color: #fff;
+      box-shadow: 0 0 10px #2575fc;
+    }
+
+    button {
+      display: block;
+      margin: 25px auto 0;
+      background: #6a11cb;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      padding: 14px 40px;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(106,17,203,0.6);
+      transition: background-color 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button:hover {
+      background: #4b0dae;
+    }
+
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 15px;
+      color: #333;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      font-weight: 600;
+      text-align: center;
+      min-height: 80px;
+      font-family: 'Lemonada', cursive;
+    }
+
+    .advice {
+      margin-top: 20px;
+      background: #fff4f4;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 12px rgba(255, 100, 100, 0.3);
+      color: #b22222;
+      font-weight: 600;
+      line-height: 1.4;
+      font-family: 'Lemonada', cursive;
+    }
+
+    section.tips {
+      margin-top: 40px;
+      padding: 20px;
+      background: #e3e3ff;
+      border-radius: 15px;
+      color: #222;
+      font-family: 'Lemonada', cursive;
+    }
+
+    section.tips h3 {
+      color: #2575fc;
+      margin-bottom: 15px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    section.tips ul {
+      list-style: disc inside;
+    }
+
+    section.tips ul li {
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CEK SEHATMU</h1>
+    <p>Website Pengecekan Kesehatan Anak Gen Z</p>
+  </header>
+  <main>
+    <h2>Self Health Check Quiz</h2>
+    <form id="healthQuiz">
+      <div class="question">
+        <h3>1. Seberapa sering kamu berolahraga dalam seminggu?</h3>
+        <input type="radio" id="q1a1" name="q1" value="2" required />
+        <label for="q1a1">Tidak pernah</label>
+        <input type="radio" id="q1a2" name="q1" value="4" />
+        <label for="q1a2">1-2 kali</label>
+        <input type="radio" id="q1a3" name="q1" value="6" />
+        <label for="q1a3">3-4 kali</label>
+        <input type="radio" id="q1a4" name="q1" value="8" />
+        <label for="q1a4">5 kali atau lebih</label>
+      </div>
+
+      <div class="question">
+        <h3>2. Berapa jam rata-rata kamu tidur setiap malam?</h3>
+        <input type="radio" id="q2a1" name="q2" value="8" required />
+        <label for="q2a1">Kurang dari 5 jam</label>
+        <input type="radio" id="q2a2" name="q2" value="5" />
+        <label for="q2a2">5-6 jam</label>
+        <input type="radio" id="q2a3" name="q2" value="7" />
+        <label for="q2a3">7-8 jam</label>
+        <input type="radio" id="q2a4" name="q2" value="9" />
+        <label for="q2a4">Lebih dari 8 jam</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Seberapa sering kamu makan sayur dan buah dalam sehari?</h3>
+        <input type="radio" id="q3a1" name="q3" value="8" required />
+        <label for="q3a1">Jarang sama sekali</label>
+        <input type="radio" id="q3a2" name="q3" value="6" />
+        <label for="q3a2">1-2 porsi</label>
+        <input type="radio" id="q3a3" name="q3" value="4" />
+        <label for="q3a3">3-4 porsi</label>
+        <input type="radio" id="q3a4" name="q3" value="2" />
+        <label for="q3a4">5 porsi atau lebih</label>
+      </div>
+
+      <div class="question">
+        <h3>4. Apakah kamu merasa stres atau cemas berkepanjangan?</h3>
+        <input type="radio" id="q4a1" name="q4" value="10" required />
+        <label for="q4a1">Sering sekali</label>
+        <input type="radio" id="q4a2" name="q4" value="7" />
+        <label for="q4a2">Kadang-kadang</label>
+        <input type="radio" id="q4a3" name="q4" value="4" />
+        <label for="q4a3">Jarang</label>
+        <input type="radio" id="q4a4" name="q4" value="1" />
+        <label for="q4a4">Tidak sama sekali</label>
+      </div>
+
+      <button type="submit">Cek Kesehatan</button>
+    </form>
+
+    <div class="result" id="resultArea" aria-live="polite"></div>
+    <div class="advice" id="adviceArea" role="alert" aria-live="polite" style="display:none;"></div>
+
+    <section class="tips">
+      <h3>Tips Kesehatan untuk Anak Gen Z</h3>
+      <ul>
+        <li>Rutin berolahraga minimal 30 menit setiap hari.</li>
+        <li>Tidur cukup 7-8 jam untuk menjaga kesehatan mental dan fisik.</li>
+        <li>Perbanyak konsumsi sayur dan buah segar untuk nutrisi optimal.</li>
+        <li>Kelola stres dengan meditasi atau aktivitas relaksasi.</li>
+        <li>Jaga hidrasi dengan minum air putih minimal 8 gelas sehari.</li>
+        <li>Kurangi waktu screen time, buat jeda untuk peregangan tiap jam.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('healthQuiz');
+    const resultArea = document.getElementById('resultArea');
+    const adviceArea = document.getElementById('adviceArea');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const q1 = parseInt(form.q1.value);
+      const q2 = parseInt(form.q2.value);
+      const q3 = parseInt(form.q3.value);
+      const q4 = parseInt(form.q4.value);
+
+      const totalScore = q1 + q2 + q3 + q4;
+
+      let healthMsg = '';
+      let advice = '';
+      let detailedAdvice = '';
+
+      if (totalScore >= 28) {
+        healthMsg = "Kesehatan kamu terlihat sangat baik! Pertahankan gaya hidup sehatmu ya 😊";
+        advice = "Lanjutkan kebiasaan baik dan tetap aktif!";
+        adviceArea.style.display = 'none';
+      } else if (totalScore >= 20) {
+        healthMsg = "Kesehatan kamu cukup baik, tapi ada beberapa hal yang bisa diperbaiki.";
+        advice = "Coba tingkatkan olahraga dan konsumsi sayur serta buah.";
+        adviceArea.style.display = 'none';
+      } else {
+        healthMsg = "Kesehatan kamu perlu perhatian lebih serius. Yuk, mulai hidup lebih sehat!";
+        advice = "Segera tingkatkan pola tidur, olahraga, dan kurangi stres.";
+        detailedAdvice = `
+          <strong>Saran untuk kamu yang membutuhkan perhatian kesehatan lebih:</strong><br/>
+          • Kunjungi tenaga kesehatan profesional untuk pemeriksaan lebih lanjut.<br/>
+          • Mulailah buat jadwal olahraga ringan tapi rutin, seperti jalan kaki atau senam.<br/>
+          • Perbanyak konsumsi makanan bergizi dan seimbang.<br/>
+          • Cari dukungan teman atau keluarga untuk mengelola stres.<br/>
+          • Batasi penggunaan gadget sebelum tidur agar kualitas tidur membaik.<br/>
+          • Jangan ragu untuk berkonsultasi dengan psikolog jika merasa stres berat.<br/>
+          <em>Ingat, menjaga kesehatan bukan cuma tanggung jawab kamu sendiri, tapi juga orang-orang di sekitarmu!</em>
+        `;
+        adviceArea.style.display = 'block';
+        adviceArea.innerHTML = detailedAdvice;
+      }
+
+      resultArea.innerHTML = `
+        <strong>${healthMsg}</strong><br/>
+        <em>${advice}</em>
+      `;
+    });
+  </script>
+</body>
+</html>
